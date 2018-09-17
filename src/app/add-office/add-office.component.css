@@ -1,0 +1,21 @@
+.pom-add-office {
+  width: 500px;
+	height: 300px;
+	display: flex;
+	padding: 10px;
+	flex-direction: column;
+	border: 1px solid #d2d2d2;
+	background-color: #ffffff;
+	margin-left: calc(50% - 250px);
+	box-shadow: 1px 2px 3px #a5a5a5;
+	margin-top: calc(50vh - 175px - 64px);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-submit {
+	margin-top: 10px;
+	text-align: right;
+}

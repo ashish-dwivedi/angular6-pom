@@ -1,0 +1,54 @@
+<div class="pom-add-shipment">
+	<h1 class="text-center">
+		<mat-icon aria-label="Side nav shopping icon">edit</mat-icon>
+		UPDATE SHIPMENT
+	</h1>
+	<form (ngSubmit)="updateShipment()">
+		<mat-form-field class="full-width">
+			<mat-select
+					placeholder="Select type"
+					[(ngModel)]="updateParams.type"
+					name="type">
+				<mat-option
+						*ngFor="let type of types"
+						[value]="type.id">
+					{{type.name}}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<mat-select
+					placeholder="Select weight"
+					[(ngModel)]="updateParams.weight"
+					name="weight">
+					<mat-option
+							*ngFor="let weight of weights"
+							[value]="weight.id">
+							{{updateParams.weight.desc}}
+						{{weight.desc}}
+					</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field class="full-width">
+			<mat-select
+					placeholder="Select office"
+					[(ngModel)]="updateParams.office"
+					name="office">
+				<mat-option
+						*ngFor="let office of offices"
+						[value]="office.id">
+					{{office.name + ' - ' + office.PLZ}}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</form>
+	<div class="button-row form-submit" class="text-right">
+		<button mat-raised-button color="primary" (click)="updateShipment()">
+			<mat-icon>done_outline</mat-icon>
+			Update Shipment
+		</button>
+	</div>
+</div>
+	

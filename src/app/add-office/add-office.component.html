@@ -1,0 +1,21 @@
+<div class="pom-add-office">
+	<h1 class="text-center">
+		<mat-icon>store_mall_directory</mat-icon>
+		ADD OFFICE
+	</h1>
+	<form class="office-form">
+		<mat-form-field class="full-width">
+			<input type="number" name="officeFormPlz" matInput placeholder="Enter PLZ" [(ngModel)]="officeParams.PLZ"/>
+		</mat-form-field>
+	
+		<mat-form-field class="full-width">
+			<input type="text" name="officeFormName" matInput placeholder="Enter name" [(ngModel)]="officeParams.name"/>
+		</mat-form-field>
+	</form>
+	<div class="button-row form-submit">
+		<button mat-raised-button color="primary" (click)="addOffice()">
+			<mat-icon>save</mat-icon>
+			Add Office
+		</button>
+	</div>
+</div>

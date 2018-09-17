@@ -1,0 +1,54 @@
+<mat-sidenav-container class="sidenav-container">
+	<mat-sidenav
+		#drawer
+		class="sidenav"
+		fixedInViewport="true"
+		[attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+		[mode]="(isHandset$ | async) ? 'over' : 'side'"
+		[opened]="(isHandset$ | async)">
+		<mat-toolbar color="primary">
+			<img class="logo-img" src="assets/logo.PNG">
+			<h2>POM</h2>
+		</mat-toolbar>
+		<mat-nav-list>
+			<span class="navbar-header">
+				<mat-icon aria-label="Side nav shopping icon">local_shipping</mat-icon>
+				Shipments
+			</span>
+			<a mat-list-item href="#" [routerLink]="['shipment/add']">
+				<mat-icon aria-label="Side nav shopping icon">add_circle</mat-icon>
+				Add Shipment
+			</a>
+			<a mat-list-item href="#" [routerLink]="['shipment/modify']">
+				<mat-icon aria-label="Side nav shopping icon">edit_circle</mat-icon>
+				Modify Shipment
+			</a>
+
+			<span class="navbar-header push-down-50">
+				<mat-icon>store_mall_directory</mat-icon>
+				Post Offices
+			</span>
+			<a mat-list-item href="#" [routerLink]="['office/add']">
+				<mat-icon>add_box</mat-icon>
+				Add Office
+			</a>
+			<a mat-list-item href="#" [routerLink]="['office/modify']">
+				<mat-icon>update</mat-icon>
+				Modify Office
+			</a>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<mat-toolbar color="primary">
+			<button
+				type="button"
+				aria-label="Toggle sidenav"
+				mat-icon-button
+				(click)="drawer.toggle()">
+				<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+			</button>
+			<span>Post Office : Munich</span>
+		</mat-toolbar>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,29 @@
+<div class="pom-add-shipment">
+	<h1 class="text-center">
+		<mat-icon aria-label="Side nav shopping icon">local_shipping</mat-icon>
+		ADD SHIPMENT
+	</h1>
+	<mat-form-field>
+		<mat-select placeholder="Select type" [(ngModel)]="shipmentParams.type">
+			<mat-option [value]="type" *ngFor="let type of types">{{type.name}}</mat-option>
+		</mat-select>
+	</mat-form-field>
+
+	<mat-form-field>
+		<mat-select placeholder="Select weight" [(ngModel)]="shipmentParams.weight">
+				<mat-option [value]="weight" *ngFor="let weight of weights">{{weight.desc}}</mat-option>
+		</mat-select>
+	</mat-form-field>
+
+	<mat-form-field>
+		<mat-select placeholder="Select office" [(ngModel)]="shipmentParams.office">
+			<mat-option [value]="office" *ngFor="let office of offices">{{office.name + ' - ' + office.PLZ}}</mat-option>
+		</mat-select>
+	</mat-form-field>
+	<div class="button-row form-submit">
+		<button mat-raised-button color="primary" (click)="addShipment()">
+			<mat-icon>save</mat-icon>
+			Add Shipment
+		</button>
+	</div>
+</div>

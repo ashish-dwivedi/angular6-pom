@@ -1,0 +1,30 @@
+<div class="pom-add-office">
+	<h1 class="text-center">
+		<mat-icon>store_mall_directory</mat-icon>
+		UPDATE OFFICE
+	</h1>
+	<form class="office-form">
+		<mat-form-field class="full-width">
+			<input type="number"
+					name="officeFormPlz"
+					matInput
+					placeholder="Enter PLZ"
+					[value]="officeParams.PLZ"
+					[(ngModel)]="officeParams.PLZ"/>
+		</mat-form-field>
+		<mat-form-field class="full-width">
+			<input type="text"
+					name="officeFormName"
+					matInput
+					placeholder="Enter name"
+					[value]="officeParams.name"
+					[(ngModel)]="officeParams.name" />
+		</mat-form-field>
+	</form>
+	<div class="button-row form-submit text-right">
+		<button mat-raised-button color="primary" (click)="updateOffice()">
+			<mat-icon>save</mat-icon>
+			Update Office
+		</button>
+	</div>
+</div>
